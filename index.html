@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otherminds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hina Mincho', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .band-name {
+            font-size: 3rem;
+            font-weight: normal;
+            letter-spacing: 8px;
+            text-transform: lowercase;
+            margin-bottom: 30px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav a:hover {
+            opacity: 0.6;
+        }
+
+        .main-content {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .album-artwork {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto 40px;
+            background: #000;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .album-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .listen-btn {
+            background: none;
+            border: 2px solid #333;
+            padding: 12px 30px;
+            font-family: 'Hina Mincho', serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 60px;
+        }
+
+        .listen-btn:hover {
+            background: #333;
+            color: #f5f5f5;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid transparent;
+        }
+
+        .social-icons a:hover {
+            color: #666;
+            border-color: #333;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #ddd;
+            margin-top: auto;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .band-name {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .nav {
+                gap: 30px;
+            }
+
+            .nav a {
+                font-size: 1rem;
+            }
+
+            .album-artwork {
+                width: 300px;
+                height: 300px;
+            }
+
+            .album-title {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .album-artwork {
+                width: 250px;
+                height: 250px;
+            }
+
+            .band-name {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+
+            .album-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="band-name">otherminds</h1>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#live">Live</a>
+                <a href="#merch">Merch</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <div class="album-artwork"></div>
+            <h2 class="album-title">Single Release</h2>
+            <button class="listen-btn" onclick="window.open('#', '_blank')">Listen Now</button>
+            
+            <div class="social-icons">
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        Copyright © 2025. otherminds. All Rights Reserved
+    </footer>
+
+    <script>
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Navigating to:', this.textContent);
+            });
+        });
+
+        document.querySelector('.listen-btn').addEventListener('click', function() {
+            window.open('https://open.spotify.com/artist/your-artist-id', '_blank');
+        });
+
+        const socialLinks = {
+            'fa-instagram': 'https://instagram.com/otherminds',
+            'fa-tiktok': 'https://tiktok.com/@otherminds', 
+            'fa-youtube': 'https://youtube.com/@otherminds',
+            'fa-spotify': 'https://open.spotify.com/artist/otherminds'
+        };
+
+        document.querySelectorAll('.social-icons a').forEach(link => {
+            const icon = link.querySelector('i');
+            if (icon) {
+                const iconClass = Array.from(icon.classList).find(cls => cls.startsWith('fa-'));
+                if (socialLinks[iconClass]) {
+                    link.href = socialLinks[iconClass];
+                }
+            }
+        });
+    </script>
+</body>
+</html>
